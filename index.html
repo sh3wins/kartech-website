@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kartech Engineering | Furniture, waiting seats and catering equipment, Nairobi</title>
+<meta name="description" content="Kartech Engineering makes furniture, public waiting seats and stainless steel catering equipment in our own workshop on Outer Ring Road, Nairobi. Since 2001. Delivery across Kenya.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<nav id="siteNav">
+  <a class="wordmark" href="#" style="text-decoration:none;color:inherit">KARTECH<span>ENGINEERING</span></a>
+  <span class="nav-chapter" id="navChapter" aria-live="polite"></span>
+  <div class="nav-links">
+    <a href="#make">What we make</a>
+    <a href="#shop">Shop</a>
+    <a href="#custom-request">Get a quote</a>
+    <a href="story.html">Our story</a>
+    <a href="#track">Track order</a>
+    <a href="#cart" class="cart-icon" id="navCart">Cart<span class="cart-count"></span></a>
+  </div>
+  <div class="nav-right">
+    <a href="#cart" class="nav-cart-m">Cart<span class="cart-count"></span></a>
+    <button class="menu-btn" aria-label="Menu">&#9776;</button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-media" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <h1>Built strong.<br>Built to last.</h1>
+    <p class="sub">Furniture &middot; Waiting seats &middot; Catering equipment</p>
+    <p class="since">Made in our own workshop in Nairobi since 2001. Delivery across Kenya.</p>
+    <div class="actions">
+      <a href="#shop" class="btn btn-primary">Shop Kartech</a>
+      <a href="#custom-request" class="btn btn-secondary">Get a quote</a>
+    </div>
+  </div>
+
+  <div class="scroll-cue">
+    <span>SCROLL</span>
+    <span class="stem"></span>
+  </div>
+</section>
+
+<!-- WHAT WE MAKE — each card opens the shop on that category. -->
+<section class="whatwebuild" id="make">
+  <div class="wwb-head">
+    <h2>What we make.</h2>
+    <p>For the places people eat, wait, learn, worship and work. One piece or a whole order.</p>
+  </div>
+  <div class="wwb-grid wwb-3">
+    <a class="wwb-card wwb-pic" href="#shop" data-filter="Furniture">
+      <div class="ph lt wwb-ph" data-shot="Photo — Kartech furniture in a restaurant, church or school"></div>
+      <div><h3>Furniture</h3><p>Restaurant, bar, church, school and outdoor seating and tables.</p></div>
+      <span class="wwb-go">Shop furniture &rarr;</span>
+    </a>
+    <a class="wwb-card wwb-pic" href="#shop" data-filter="Waiting seats">
+      <div class="ph wwb-ph" data-shot="Photo — Kartech waiting seats in a hospital, bank or office"></div>
+      <div><h3>Waiting seats</h3><p>Linked metal seating for hospitals, banks, offices and halls.</p></div>
+      <span class="wwb-go">Shop waiting seats &rarr;</span>
+    </a>
+    <a class="wwb-card wwb-pic" href="#shop" data-filter="Catering equipment">
+      <div class="ph lt wwb-ph" data-shot="Photo — Kartech stainless steel gas cookers"></div>
+      <div><h3>Catering equipment</h3><p>Stainless steel gas cookers and burners for commercial kitchens.</p></div>
+      <span class="wwb-go">Shop catering equipment &rarr;</span>
+    </a>
+  </div>
+  <a class="wwb-custom" href="#custom-request"><strong>Need something made to measure?</strong> <span>Tell us what you need and we&rsquo;ll quote it &rarr;</span></a>
+</section>
+
+<section class="shop" id="shop">
+  <div class="shop-head">
+    <h2>Shop Kartech</h2>
+    <p>Choose your pieces, colours and quantities. We confirm the price and delivery with you before you pay.</p>
+  </div>
+  <div class="shop-tabs">
+    <span class="active">All</span><span>Furniture</span><span>Waiting seats</span><span>Catering equipment</span><span>Outdoor</span>
+  </div>
+  <div class="shop-grid" id="shopGrid"></div>
+</section>
+
+<section class="custom" id="custom-request">
+  <div class="custom-wrap">
+    <div class="custom-head">Can't find what<br>you're looking for?</div>
+    <p class="custom-sub">Tell us what you need. We'll come back with a quote.</p>
+
+    <form class="custom-form" id="customForm" novalidate>
+      <div class="cf-step">
+        <label for="cfNeed">WHAT DO YOU NEED?</label>
+        <textarea id="cfNeed" name="need" required placeholder="For example: 40 church chairs in blue, or a three-burner cooker for a school kitchen. Sizes, quantities and colours help."></textarea>
+        <p class="cf-err" data-err="need">Tell us a little about what you need.</p>
+      </div>
+      <div class="cf-step">
+        <span class="cf-lab">SHOW US <em>(optional)</em></span>
+        <div class="cf-upload" id="cfDrop" role="button" tabindex="0">+ Add photos, sketches or measurements<small>Images or PDF · up to 10 files, 10 MB each</small></div>
+        <input type="file" id="cfFiles" accept="image/*,.pdf" multiple hidden>
+        <ul class="cf-files" id="cfFileList"></ul>
+      </div>
+      <div class="cf-step">
+        <span class="cf-lab" id="cfSpaceLab">WHERE WILL IT GO?</span>
+        <div class="cf-spaces" role="radiogroup" aria-labelledby="cfSpaceLab">
+          <span class="sel">Restaurant or kitchen</span><span>Hotel or bar</span><span>Church or school</span><span>Hospital, bank or office</span><span>Home</span><span>Other</span>
+        </div>
+        <input type="hidden" name="space" id="cfSpace" value="Restaurant or kitchen">
+      </div>
+      <div class="cf-step">
+        <span class="cf-lab">HOW DO WE REACH YOU?</span>
+        <input type="text" id="cfName" name="name" placeholder="Name" autocomplete="name" aria-label="Name">
+        <p class="cf-err" data-err="name">Please add your name.</p>
+        <input type="tel" id="cfPhone" name="phone" placeholder="Phone / WhatsApp" autocomplete="tel" aria-label="Phone or WhatsApp" style="margin-top:14px;">
+        <input type="email" id="cfEmail" name="email" placeholder="Email" autocomplete="email" aria-label="Email" style="margin-top:14px;">
+        <p class="cf-err" data-err="contact">Add a phone number or an email so we can reach you.</p>
+      </div>
+      <div class="cf-actions">
+        <button type="submit" class="custom-cta">Send Project →</button>
+        <button type="button" class="cf-alt" id="cfEmailBtn">or send by email</button>
+      </div>
+      <p class="cf-note">Your request opens in WhatsApp, ready to send. If you added photos or sketches, attach them in the chat.</p>
+    </form>
+
+    <div class="cf-done" id="cfDone" hidden aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- MADE HERE — a short look at the workshop. The full story lives on story.html.
+     To add a photo: put <img src="photos/your-photo.jpg" alt="..."> inside a .ph block. -->
+<section class="k-sec k-paper made-here">
+  <div class="k-wrap">
+    <div class="k-head">
+      <h2 class="k-h2 rv">Made in our<br>own workshop.</h2>
+      <p class="k-body muted rv d1">Every piece is cut, welded and finished by our team on Outer Ring Road, Nairobi. We&rsquo;ve been building since 2001.</p>
+    </div>
+    <div class="made-grid">
+      <figure><div class="ph ri" data-shot="Photo — welding in the Kartech workshop"></div><figcaption class="k-note">Welding</figcaption></figure>
+      <figure><div class="ph lt ri" data-shot="Photo — the new, bigger Kartech shop"></div><figcaption class="k-note">The shop</figcaption></figure>
+      <figure><div class="ph pe ri" data-shot="Photo — finished pieces ready for delivery"></div><figcaption class="k-note">Ready for delivery</figcaption></figure>
+    </div>
+    <a class="k-link rv" href="story.html">See how it&rsquo;s made &rarr;</a>
+  </div>
+</section>
+
+  <section class="k-open" id="visit">
+    <div class="k-open-media ph lab-top" data-shot="Photo — wide: people working together on the workshop floor"></div>
+    <div class="k-open-shade"></div>
+    <div class="k-open-text">
+      <h2 class="k-display rv">Come see us.</h2>
+      <p class="k-lede rv d1">Visit the shop to see the pieces in person and talk through your order.</p>
+      <div class="k-actions rv d1">
+        <a class="k-btn fill" href="https://www.google.com/maps/search/?api=1&amp;query=Kartech+Engineering+Mtindwa" target="_blank" rel="noopener">Visit Mtindwa <span aria-hidden="true">→</span></a>
+        <a class="k-btn line" href="https://www.google.com/maps/search/?api=1&amp;query=Kartech+Engineering+Utawala" target="_blank" rel="noopener">Visit Utawala <span aria-hidden="true">→</span></a>
+      </div>
+      <a class="k-link rv d2" href="story.html#workshop">Explore the workshop →</a>
+    </div>
+  </section>
+
+<!-- TRACK YOUR ORDER -->
+<section class="k-sec k-white" id="track">
+  <div class="k-wrap tr-wrap">
+    <div class="tr-intro">
+      <p class="k-kicker">Orders</p>
+      <h2 class="k-h2">Track your<br>order.</h2>
+      <p class="k-body muted">Enter the order number from your confirmation (it starts with KT) and the phone number you ordered with.</p>
+    </div>
+    <div>
+      <form class="tr-form" id="trackForm" novalidate>
+        <label class="ct-field"><span>Order number</span><input id="trNo" placeholder="KT-260923-AB12" autocomplete="off" autocapitalize="characters" spellcheck="false"></label>
+        <label class="ct-field"><span>Phone number</span><input id="trPhone" type="tel" placeholder="07XX XXX XXX" autocomplete="tel"></label>
+        <button type="submit" class="k-btn dark">Track order <span aria-hidden="true">→</span></button>
+      </form>
+      <div class="tr-recent" id="trRecent"></div>
+      <div id="trackResult" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER — fill in the [bracketed] details. Phone, WhatsApp and email come from KARTECH SETTINGS. -->
+<footer class="kf" id="contact">
+  <div class="kf-in">
+    <div class="kf-top">
+      <div class="kf-brand">
+        <div class="wordmark">KARTECH<span>ENGINEERING</span></div>
+        <p>Furniture, waiting seats and catering equipment, made in our own workshop in Nairobi since 2001. Delivery across Kenya.</p>
+        <a class="k-btn line" href="#custom-request">Start a custom request <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="kf-cols">
+        <div class="kf-col">
+          <h4>Shop</h4>
+          <a href="#shop" data-filter="All">Everything</a>
+          <a href="#shop" data-filter="Furniture">Furniture</a>
+          <a href="#shop" data-filter="Waiting seats">Waiting seats</a>
+          <a href="#shop" data-filter="Catering equipment">Catering equipment</a>
+          <a href="#shop" data-filter="Outdoor">Outdoor</a>
+          <a href="#cart">Cart</a>
+        </div>
+        <div class="kf-col">
+          <h4>Kartech</h4>
+          <a href="story.html#workshop">The workshop</a>
+          <a href="story.html#people">The people</a>
+          <a href="story.html#materials">Materials &amp; craft</a>
+          <a href="story.html#our-story">Our story</a>
+        </div>
+        <div class="kf-col">
+          <h4>Help</h4>
+          <a href="#track">Track your order</a>
+          <a href="#custom-request">Custom request</a>
+          <a href="#" data-cfg="wa">WhatsApp us</a>
+        </div>
+        <div class="kf-col">
+          <h4>Visit</h4>
+          <p><strong>Mtindwa</strong>[Address — to add]<br>[Opening hours — to add]</p>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Kartech+Engineering+Mtindwa" target="_blank" rel="noopener">Directions →</a>
+          <p><strong>Utawala</strong>[Address — to add]<br>[Opening hours — to add]</p>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Kartech+Engineering+Utawala" target="_blank" rel="noopener">Directions →</a>
+        </div>
+        <div class="kf-col">
+          <h4>Contact</h4>
+          <a href="#" data-cfg="phone">[+254 7XX XXX XXX]</a>
+          <a href="#" data-cfg="email">[Email — to add]</a>
+          <div class="kf-social">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">TikTok</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="kf-bottom">
+      <span>© 2026 Kartech Engineering. All rights reserved.</span>
+      <a href="#" data-top>Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<!-- PRODUCT VIEW (opens when someone taps "View product") -->
+<div class="pv" id="productView" aria-hidden="true">
+  <div class="pv-bar">
+    <span class="k-label">Kartech · Shop</span>
+    <button type="button" class="pv-close" data-pv-close>Close ×</button>
+  </div>
+  <div class="pv-inner" id="pvBody" role="dialog" aria-modal="true" aria-label="Product"></div>
+</div>
+
+<!-- CART -->
+<div class="ct" id="cartDrawer" aria-hidden="true">
+  <div class="ct-backdrop" id="ctBackdrop"></div>
+  <aside class="ct-panel" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+    <div class="ct-head">
+      <h2 id="cartTitle">Your cart</h2>
+      <button type="button" class="ct-close" data-close>Close ×</button>
+    </div>
+    <div class="ct-body" id="cartBody"></div>
+    <div class="ct-foot" id="cartFoot"></div>
+  </aside>
+</div>
+
+<div class="k-toast" id="kToast" role="status" aria-live="polite"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/settings.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
