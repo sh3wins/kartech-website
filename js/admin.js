@@ -2,8 +2,8 @@
    ADMIN SETTINGS — use the same values as the website
    ===================================================================== */
 const ADMIN = {
-  supabaseUrl: '',   // e.g. 'https://abcdefghijk.supabase.co'
-  supabaseKey: '',   // the "anon public" / "publishable" key
+    supabaseUrl: 'https://zwnaufwunzaqchgxyrfv.supabase.co',
+  supabaseKey: 'sb_publishable_-m1Qm057XAkFk9IX21wN7Q_de7zzP2C',
   currency: 'KSh'
 };
 

@@ -14,8 +14,8 @@ const KARTECH = {
 
   /* SUPABASE (the database) — from Supabase → Project Settings → API.
      Leave both empty and the site still works, sending everything through WhatsApp instead. */
-  supabaseUrl: '',                   // e.g. 'https://abcdefghijk.supabase.co'
-  supabaseKey: ''                    // the "anon public" / "publishable" key (safe to put on a website)
+    supabaseUrl: 'https://zwnaufwunzaqchgxyrfv.supabase.co',
+  supabaseKey: 'sb_publishable_-m1Qm057XAkFk9IX21wN7Q_de7zzP2C'
 };
 
 /* 2. PRODUCTS — one block per piece.
