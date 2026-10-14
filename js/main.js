@@ -749,7 +749,16 @@
           ${cancelled
             ? `<p class="tr-msg">This order has been cancelled. If that's unexpected, contact Kartech.</p>`
             : `<ol class="tr-stages">${STAGES.map((s, i) => `<li class="${i < idx ? 'done' : ''}${i === idx ? ' now' : ''}"><span class="tr-dot"></span>${s[1]}</li>`).join('')}</ol>`}
-          ${o.note ? `<p class="tr-msg"><strong>Message from Kartech:</strong> ${esc(o.note)}</p>` : ''}
+          ${o.workshop && o.workshop.length && !cancelled ? `
+          <div class="tr-ws">
+            <p class="k-label"><span class="tr-live"></span>Live from the workshop</p>
+            ${o.workshop.map(w => `
+              <div class="tr-ws-item">
+                <p class="tr-ws-name">${w.qty} × ${esc(w.item)}</p>
+                <ol class="tr-ws-steps">${(w.steps || []).map(s => `<li class="${s.status === 'done' ? 'done' : (s.status === 'working' || s.status === 'assigned') ? 'now' : ''}">${esc(s.name)}</li>`).join('')}</ol>
+              </div>`).join('')}
+            <p class="tr-ws-note">This updates by itself as each step is finished in our workshop.</p>
+          </div>` : (o.note ? `<p class="tr-msg"><strong>Message from Kartech:</strong> ${esc(o.note)}</p>` : '')}
           ${o.pending ? `<p class="tr-msg">Your order has been sent. Kartech will confirm it with you on WhatsApp, and each step will show here once it's updated.</p>` : ''}
           ${o.items && o.items.length ? `<ul class="tr-items">${o.items.map(i => `<li><span>${i.qty} × ${esc(i.name)}${i.finish ? ` (${esc(i.finish)})` : ''}</span><span>${i.price == null ? 'On request' : money(i.price * i.qty)}</span></li>`).join('')}</ul>` : ''}
           <a class="ct-link" target="_blank" rel="noopener" href="${esc(ask)}">Ask for an update on WhatsApp →</a>
@@ -776,7 +785,7 @@
         const { data, error } = await db.rpc('track_order', { p_order_no: no, p_phone: ph });
         if (error){ trackNotFound(no, `<strong>We couldn't check right now.</strong> Check your internet connection and try again, or ask Kartech directly.`); return; }
         if (!data){ trackNotFound(no); return; }
-        renderTrack({ no: data.order_no, date: data.created_at, status: data.status, note: data.status_note, items: data.items });
+        renderTrack({ no: data.order_no, date: data.created_at, status: data.status, note: data.status_note, items: data.items, workshop: data.workshop });
         return;
       }
       const local = store.get(ORDERS_KEY, []).find(o => o.no === no);
