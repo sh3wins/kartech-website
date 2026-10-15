@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Our story | Kartech Engineering, Nairobi</title>
 <meta name="description" content="How Kartech Engineering builds furniture, waiting seats and catering equipment in its own Nairobi workshop, and the people behind it.">
+<link rel="manifest" href="/kartech-system/manifest.json">
+<meta name="theme-color" content="#1F3A2A">
+<link rel="apple-touch-icon" href="/kartech-system/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
@@ -956,5 +959,14 @@
 <script src="js/settings.js"></script>
 <script src="js/main.js?v=2"></script>
 
+<script>
+  // Inside the Kartech app: a small button to switch to Workshop / Owner
+  (function(){ var standalone = matchMedia('(display-mode: standalone)').matches || navigator.standalone;
+    if (!standalone) return;
+    var a = document.createElement('a'); a.href = '/kartech-system/index.html?choose'; a.textContent = '⇄';
+    a.title = 'Switch side (Customer / Workshop / Owner)'; a.setAttribute('aria-label', a.title);
+    a.style.cssText = 'position:fixed;left:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:90;width:40px;height:40px;border-radius:50%;background:#1F3A2A;color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.25);opacity:.85';
+    document.body.appendChild(a); })();
+</script>
 </body>
 </html>
