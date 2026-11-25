@@ -8,10 +8,9 @@
 <link rel="manifest" href="/kartech-system/manifest.json">
 <meta name="theme-color" content="#1F3A2A">
 <link rel="apple-touch-icon" href="/kartech-system/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css?v=2">
+<link rel="stylesheet" href="fonts/fonts.css?v=1">
+<link rel="stylesheet" href="css/styles.css?v=3">
+<link rel="stylesheet" href="css/luxe.css?v=1">
 <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -38,14 +37,16 @@
 
   <div class="hero-content">
     <h1>Built strong.<br>Built to last.</h1>
-    <p class="sub">Furniture &middot; Waiting seats &middot; Catering equipment</p>
-    <p class="since">Made in our own workshop in Nairobi since 2001. Delivery across Kenya.</p>
+    <span class="seam" aria-hidden="true"></span>
+    <p class="sub">Furniture, waiting seats and catering equipment, cut, welded and finished by hand in our own Nairobi workshop.</p>
+    <p class="since">Delivered across Kenya.</p>
     <div class="actions">
       <a href="#shop" class="btn btn-primary">Shop Kartech</a>
       <a href="#custom-request" class="btn btn-secondary">Get a quote</a>
     </div>
   </div>
 
+  <p class="hero-mark">Making in Nairobi since<b>2001</b></p>
   <div class="scroll-cue">
     <span>SCROLL</span>
     <span class="stem"></span>
@@ -62,20 +63,20 @@
     <a class="wwb-card wwb-pic" href="#shop" data-filter="Furniture">
       <div class="ph lt wwb-ph" data-shot="Photo — Kartech furniture in a restaurant, church or school"></div>
       <div><h3>Furniture</h3><p>Restaurant, bar, church, school and outdoor seating and tables.</p></div>
-      <span class="wwb-go">Shop furniture &rarr;</span>
+      <span class="wwb-go">Shop furniture</span>
     </a>
     <a class="wwb-card wwb-pic" href="#shop" data-filter="Waiting seats">
       <div class="ph wwb-ph" data-shot="Photo — Kartech waiting seats in a hospital, bank or office"></div>
       <div><h3>Waiting seats</h3><p>Linked metal seating for hospitals, banks, offices and halls.</p></div>
-      <span class="wwb-go">Shop waiting seats &rarr;</span>
+      <span class="wwb-go">Shop waiting seats</span>
     </a>
     <a class="wwb-card wwb-pic" href="#shop" data-filter="Catering equipment">
       <div class="ph lt wwb-ph" data-shot="Photo — Kartech stainless steel gas cookers"></div>
       <div><h3>Catering equipment</h3><p>Stainless steel gas cookers and burners for commercial kitchens.</p></div>
-      <span class="wwb-go">Shop catering equipment &rarr;</span>
+      <span class="wwb-go">Shop catering equipment</span>
     </a>
   </div>
-  <a class="wwb-custom" href="#custom-request"><strong>Need something made to measure?</strong> <span>Tell us what you need and we&rsquo;ll quote it &rarr;</span></a>
+  <a class="wwb-custom" href="#custom-request"><strong>Need something made to measure?</strong> <span>Tell us what you need and we&rsquo;ll quote it</span></a>
 </section>
 
 <section class="shop" id="shop">
@@ -93,28 +94,29 @@
   <div class="custom-wrap">
     <div class="custom-head">Can't find what<br>you're looking for?</div>
     <p class="custom-sub">Tell us what you need. We'll come back with a quote.</p>
+    <p class="custom-sub"><a href="send.html" style="color:inherit;font-weight:600;text-decoration:underline">Just want to send a photo? Do it in one step →</a></p>
 
     <form class="custom-form" id="customForm" novalidate>
       <div class="cf-step">
-        <label for="cfNeed">WHAT DO YOU NEED?</label>
+        <label for="cfNeed">What do you need?</label>
         <textarea id="cfNeed" name="need" required placeholder="For example: 40 church chairs in blue, or a three-burner cooker for a school kitchen. Sizes, quantities and colours help."></textarea>
         <p class="cf-err" data-err="need">Tell us a little about what you need.</p>
       </div>
       <div class="cf-step">
-        <span class="cf-lab">SHOW US <em>(optional)</em></span>
+        <span class="cf-lab">Show us <em>(optional)</em></span>
         <div class="cf-upload" id="cfDrop" role="button" tabindex="0">+ Add photos, sketches or measurements<small>Images or PDF · up to 10 files, 10 MB each</small></div>
         <input type="file" id="cfFiles" accept="image/*,.pdf" multiple hidden>
         <ul class="cf-files" id="cfFileList"></ul>
       </div>
       <div class="cf-step">
-        <span class="cf-lab" id="cfSpaceLab">WHERE WILL IT GO?</span>
+        <span class="cf-lab" id="cfSpaceLab">Where will it go?</span>
         <div class="cf-spaces" role="radiogroup" aria-labelledby="cfSpaceLab">
           <span class="sel">Restaurant or kitchen</span><span>Hotel or bar</span><span>Church or school</span><span>Hospital, bank or office</span><span>Home</span><span>Other</span>
         </div>
         <input type="hidden" name="space" id="cfSpace" value="Restaurant or kitchen">
       </div>
       <div class="cf-step">
-        <span class="cf-lab">HOW DO WE REACH YOU?</span>
+        <span class="cf-lab">How do we reach you?</span>
         <input type="text" id="cfName" name="name" placeholder="Name" autocomplete="name" aria-label="Name">
         <p class="cf-err" data-err="name">Please add your name.</p>
         <input type="tel" id="cfPhone" name="phone" placeholder="Phone / WhatsApp" autocomplete="tel" aria-label="Phone or WhatsApp" style="margin-top:14px;">
@@ -122,7 +124,7 @@
         <p class="cf-err" data-err="contact">Add a phone number or an email so we can reach you.</p>
       </div>
       <div class="cf-actions">
-        <button type="submit" class="custom-cta">Send Project →</button>
+        <button type="submit" class="custom-cta">Send my request</button>
         <button type="button" class="cf-alt" id="cfEmailBtn">or send by email</button>
       </div>
       <p class="cf-note">Your request opens in WhatsApp, ready to send. If you added photos or sketches, attach them in the chat.</p>
